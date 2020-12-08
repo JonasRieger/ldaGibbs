@@ -491,7 +491,8 @@ SEXP collapsedGibbsSampler(SEXP documents,
     SEXP burnin_,
     SEXP compute_log_likelihood_,
     SEXP trace_,
-    SEXP freeze_topics_) {
+    SEXP freeze_topics_,
+    SEXP n_) {
   GetRNGstate();
   // This is a long so that dd * K does not overflow
   long dd;
@@ -522,6 +523,9 @@ SEXP collapsedGibbsSampler(SEXP documents,
 
   CHECKLEN(N_, Integer, 1);
   int N = INTEGER(N_)[0];
+
+  CHECKLEN(n_, Integer, 1);
+  int n_init = INTEGER(n_)[0];
 
   int method = -1;
 
@@ -797,7 +801,7 @@ SEXP collapsedGibbsSampler(SEXP documents,
     if (trace >= 1) {
       REprintf("Iteration %d\n", iteration);
     }
-    for (dd = 0; dd < nd; ++dd) {
+    for (dd = n_init; dd < nd; ++dd) {
       R_CheckUserInterrupt();
       SEXP zs = VECTOR_ELT(assignments, dd);
       SEXP document = VECTOR_ELT(documents, dd);
