@@ -673,7 +673,6 @@ SEXP collapsedGibbsSampler(SEXP documents,
     for (ii = 0; ii < length(initial_); ++ii) {
       if (!strcmp(CHAR(STRING_ELT(names, ii)), "assignments")) {
         initial = VECTOR_ELT(initial_, ii);
-        CHECKLEN(initial, NewList, nd);
       } else if (!strcmp(CHAR(STRING_ELT(names, ii)), "topic_sums")) {
         initial_topic_sums = VECTOR_ELT(initial_, ii);
         if (!isInteger(initial_topic_sums) ||
