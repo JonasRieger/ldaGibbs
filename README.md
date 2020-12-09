@@ -1,2 +1,2 @@
-# lda_gibbs
+# ldaGibbs
 Latent Dirichlet allocation package for R
