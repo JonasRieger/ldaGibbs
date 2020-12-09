@@ -29,7 +29,7 @@ SEXP ldagibbs(SEXP documents,
                SEXP n_) {
   GetRNGstate();
   long dd;
-  int ii;<
+  int ii;
   int kk;
   
   CHECK(documents, NewList);
