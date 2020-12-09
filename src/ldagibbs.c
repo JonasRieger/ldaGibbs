@@ -13,7 +13,10 @@ error(#VAL " -- must be a length -- " #LEN " " #TYPE ".");                   \
 
 #define CHECKMATROW(VAL, TYPE, NROW) if (!isMatrix(VAL) || !is##TYPE(VAL) || NUMROWS(VAL) != NROW) { \
 error(#VAL " must be a matrix with " #NROW " rows of type " #TYPE ".");                              \
-}
+}                                                              \
+
+#define NUMROWS(MAT) (INTEGER(GET_DIM(MAT))[0])
+#define NUMCOLS(MAT) (INTEGER(GET_DIM(MAT))[1])
 
 SEXP ldagibbs(SEXP documents,
                SEXP K_,
