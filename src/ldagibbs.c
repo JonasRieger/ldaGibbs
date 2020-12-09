@@ -29,7 +29,7 @@ SEXP ldagibbs(SEXP documents,
                SEXP n_) {
   GetRNGstate();
   long dd;
-  int ii;
+  int ii;<
   int kk;
   
   CHECK(documents, NewList);
@@ -203,7 +203,6 @@ SEXP ldagibbs(SEXP documents,
   // Was passier hier`? Was macht R_alloc?
   // initialisiere Pointer p
   double* p = (double *)R_alloc(K, sizeof(double));
-  double* p_pair = NULL; 
   
   // initialisiere iwelche Werte...
   double const_prior = 0;
@@ -249,7 +248,6 @@ SEXP ldagibbs(SEXP documents,
       int* document_p = INTEGER(document);
       int* V_p = INTEGER(V_);
       int V_l = length(V_);
-      int has_annotations = !isNull(annotations);
       int* zs_p = INTEGER(zs);
       
       for (ww = 0; ww < nw; ++ww) {
