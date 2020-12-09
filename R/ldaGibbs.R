@@ -1,9 +1,9 @@
-lda_gibbs = function(docs, K, vocab, num.iterations, alpha, eta, initial = NULL, 
+ldaGibbs = function(docs, K, vocab, num.iterations, alpha, eta, initial = NULL, 
                      burnin = 0L, compute.log.likelihood = FALSE, trace = 0L,
                      freeze.topics = FALSE, n.init = 0L){
   lengths = as.integer(length(vocab))
   retval = structure(
-    .Call("lda_gibbs", docs, as.integer(K), lengths, as.integer(num.iterations),
+    .Call("ldagibbs", docs, as.integer(K), lengths, as.integer(num.iterations),
           as.double(alpha), as.double(eta), initial, as.integer(burnin),
           as.logical(compute.log.likelihood), trace, as.logical(freeze.topics),
           as.integer(n.init)),

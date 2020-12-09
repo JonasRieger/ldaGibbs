@@ -1,4 +1,4 @@
-Package: lda_gibbs
+Package: ldaGibbs
 Type: Package
 Title: Collapsed Gibbs Sampling for LDA
 Version: 0.0.1
@@ -8,4 +8,4 @@ Maintainer: Jonas Rieger <jonas.rieger@tu-dortmund.de>
 Description: Implements latent Dirichlet allocation (LDA) via a fast collapsed Gibbs sampler written in C.
 License: LGPL
 LazyLoad: yes
-BugReports: https://github.com/JonasRieger/lda_gibbs
+BugReports: https://github.com/JonasRieger/ldaGibbs

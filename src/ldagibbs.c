@@ -15,7 +15,7 @@ error(#VAL " -- must be a length -- " #LEN " " #TYPE ".");                   \
 error(#VAL " must be a matrix with " #NROW " rows of type " #TYPE ".");                              \
 }
 
-SEXP lda_gibbs(SEXP documents,
+SEXP ldagibbs(SEXP documents,
                SEXP K_,
                SEXP V_,
                SEXP N_,

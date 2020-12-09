@@ -4,10 +4,10 @@
 #include <R_ext/Rdynload.h>
 
 /* .Call calls */
-extern SEXP lda_gibbs(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP ldagibbs(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
-    {"lda_gibbs", (DL_FUNC) &collapsedGibbsSampler, 12},
+    {"ldagibbs", (DL_FUNC) &ldagibbs, 12},
     {NULL, NULL, 0}
 };
 
