@@ -63,7 +63,7 @@ SEXP ldagibbs(SEXP documents,
   
   // init and protect output
   SEXP retval;
-  PROTECT(retval = allocVector(VECSXP, 10));
+  PROTECT(retval = allocVector(VECSXP, 6));
   
   // initialisiere verschiedene Elemente
   SEXP assignments;
@@ -93,7 +93,7 @@ SEXP ldagibbs(SEXP documents,
     error("Unable to allocate memory for document sums");
   }
   if (compute_log_likelihood) {
-    SET_VECTOR_ELT(retval, 9, log_likelihood = allocMatrix(REALSXP, 2, N));
+    SET_VECTOR_ELT(retval, 5, log_likelihood = allocMatrix(REALSXP, 2, N));
   }
   if (burnin < 0) {
     error("burnin must be positive.");
@@ -141,7 +141,6 @@ SEXP ldagibbs(SEXP documents,
     error("initial topic sums and topics must both be specified.");
   }
   
-  
   if (initial_topics == NULL) {
     for (ii = 0; ii < K * V; ++ii) {
       INTEGER(topics)[ii] = 0;
@@ -164,7 +163,6 @@ SEXP ldagibbs(SEXP documents,
   for (ii = 0; ii < K * nd; ++ii) {
     INTEGER(document_sums)[ii] = 0;
   }
-  
   
   for (dd = 0; dd < nd; ++dd) {
     // loop over documents
